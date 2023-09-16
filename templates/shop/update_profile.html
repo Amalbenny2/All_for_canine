@@ -1,0 +1,51 @@
+{% extends 'shop/index.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table table-bordered">
+
+    <tr>
+      <th scope="row">Shop_name</th>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" value="{{ data.shop_name }}" class="form-control" required  /></td>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+      <td><label for="textfield2"></label>
+      <input type="email" name="textfield2" id="textfield2" value="{{ data.shop_email }}" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <th scope="row">Phone_number</th>
+      <td><label for="textfield3"></label>
+      <input type="number" name="textfield3" id="textfield3" value="{{ data.shop_phonenumber }}"class="form-control" required  /></td>
+    </tr>
+    <tr>
+      <th scope="row">Photo</th>
+      <td><label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <th scope="row">Lattitude</th>
+      <td><label for="textfield5"></label>
+      <input type="text" name="textfield5" id="textfield5" value="{{ data.shop_lattitude }}" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <th scope="row">Longitude</th>
+      <td><label for="textfield6"></label>
+      <input type="text" name="textfield6" id="textfield6" value="{{ data.shop_longitude }}" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="Update" class="btn btn-primary"/></th>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

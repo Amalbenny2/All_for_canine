@@ -1,0 +1,33 @@
+{% extends 'user/index.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table  class="table table-bordered">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Disease</th>
+      <th scope="col">Symptoms</th>
+      <th scope="col">Solution</th>
+      <th scope="col">Photo</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i.D_name }}</td>
+      <td>{{ i.Symptoms }}</td>
+      <td>{{ i.Solutions }}</td>
+      <td><img src="{{ i.Breed_photo}}" height="85%" width="85%" alt=""/></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

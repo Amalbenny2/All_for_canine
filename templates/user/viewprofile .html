@@ -1,0 +1,66 @@
+{% extends 'user/index.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <th scope="row">User_name</th>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" value="{{ data.user_name }}" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2"value="{{ data.user_email }}" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <th scope="row">Housename</th>
+      <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" value="{{ data.user_housename }}" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <th scope="row">Place</th>
+      <td><label for="textfield4"></label>
+      <input type="text" name="textfield4" id="textfield4" value="{{ data.user_place}}" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <th scope="row">Post</th>
+      <td><label for="textfield5"></label>
+      <input type="text" name="textfield5" id="textfield5" value="{{ data.user_post }}" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <th scope="row">Pin</th>
+      <td><label for="textfield6"></label>
+      <input type="text" name="textfield6" id="textfield6" value=" {{ data.user_pin }}" class="form-control" required /></td>
+    </tr>
+{#    <tr>#}
+{#      <th scope="row">Lattitude</th>#}
+{#      <td><label for="textfield7"></label>#}
+{#      <input type="text" name="textfield7" id="textfield7" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <th scope="row">Longitude</th>#}
+{#      <td><label for="textfield8"></label>#}
+{#      <input type="text" name="textfield8" id="textfield8" /></td>#}
+{#    </tr>#}
+    <tr>
+      <th scope="row">Phone_number</th>
+      <td><label for="textfield9"></label>
+      <input type="text" name="textfield9" id="textfield9" value="{{ data.user_phonenumber }}" class="form-control" required/></td>
+    </tr>
+
+    <tr>
+      <td colspan="2" scope="row" align="center"><a href="/update_profile/{{ data.user_id }}#aaa" class="btn btn-secondary">update</a></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

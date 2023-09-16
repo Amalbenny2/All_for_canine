@@ -1,0 +1,43 @@
+{% extends 'admin/index.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table  class="table table-bordered">
+    <tr>
+      <th width="10" scope="col">#</th>
+      <th width="35" scope="col">Name</th>
+      <th width="35" scope="col">Email</th>
+      <th width="63" scope="col">Phone number</th>
+      <th width="74" scope="col">Location</th>
+      <th width="62" scope="col">&nbsp;</th>
+      <th width="50" scope="col">Total rating</th>
+      <th width="50" scope="col">&nbsp;</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i.shop_name}}&nbsp;</td>
+      <td>{{ i.shop_email }}</td>
+      <td>{{ i.shop_phonenumber }}</td>
+        <td><a href="https://www.google.com/maps/?q={{ i['shop_latitude'] }},{{ i['shop_longitude'] }}#aaa">locate</a></td>
+        {% if i.usertype=='shop' %}
+            <td><p><a href="/blockshop/{{ i.loginid }}#aaa" class="btn btn-danger">block</a></p></td>
+          {% elif i.usertype=='blocked' %}
+      <td><p><a href="/unblockshop/{{ i.loginid }}#aaa" class="btn btn-success">unblock</a></p></td>
+        {% endif %}
+      <td>&nbsp;</td>
+      <td><a href="/rating/{{ i.loginid }}#aaa">view rating</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

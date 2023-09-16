@@ -1,0 +1,38 @@
+{% extends 'user/index.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Location</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone_number</th>
+      <th scope="col">&nbsp;</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i.shop_name }}</td>
+      <td><a href="https://www.google.com/maps/?q={{ i['shop_lattitude'] }},{{ i['shop_longitude'] }}">TRACK</a></td>
+      <td>{{ i.shop_email }}</td>
+      <td>{{ i.shop_phonenumber }}</td>
+      <td><a href="/view_shop_pet/{{ i.shop_id }}#aaa" class="btn btn-primary">view pets</a></td>
+      <td><a href="/view_acessoriess/{{ i.shop_id }}#aaa"  class="btn btn-secondary" >view accessories</a></td>
+    </tr>
+
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

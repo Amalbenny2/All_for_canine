@@ -1,0 +1,37 @@
+{% extends 'user/index.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">phone_number</th>
+      <th scope="col">Location</th>
+      <th scope="col">Payment_status</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i.shop_name}}</td>
+      <td>{{ i.shop_email }}</td>
+      <td>{{ i.shop_phonenumber}}</td>
+      <td><a href="https://www.google.com/maps/?q={{ i['latitude'] }},{{ i['longitude'] }}" class="btn btn-secondary">TRACK</a></td>
+      <td>{{ i.Payment_status }}</td>
+      <td><a href="/view_items/{{ i.AB_id }}#aaa" class="btn btn-primary">View_item</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

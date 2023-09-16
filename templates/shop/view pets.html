@@ -1,0 +1,34 @@
+{% extends 'shop/index.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Breed</th>
+      <th scope="col">Photo</th>
+      <th scope="col">Price</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i.Breed_name }}</td>
+      <td><img src="{{ i.P_photo }}" height="75%" width="75%" alt=""/></td>
+      <td>{{ i.Price }}</td>
+      <td><p><a href="/editpets/{{ i.P_id }}#aaa" class="btn btn-success">Edit</a></p>
+      <p><a href="/deletepets/{{ i.P_id }}#aaa" class="btn btn-danger">Delete</a></p></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}
